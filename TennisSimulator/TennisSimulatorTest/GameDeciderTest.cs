@@ -2,6 +2,8 @@ using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;
 using TennisSimulator;
+using TennisSimulator.Deciders;
+using TennisSimulator.Domain;
 
 namespace TennisSimulatorTest
 {

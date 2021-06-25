@@ -1,8 +1,9 @@
 ﻿using System;
+using TennisSimulator.Domain;
 
-namespace TennisSimulator
+namespace TennisSimulator.PointAwarders
 {
-    public class RandomGamePointAwarder : IPointAwarder
+    public class GamePointAwarder : IPointAwarder
     {
         public void AwardPoint(ScoreResult scoreResult)
         {

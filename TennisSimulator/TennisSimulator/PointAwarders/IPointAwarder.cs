@@ -1,4 +1,6 @@
-﻿namespace TennisSimulator
+﻿using TennisSimulator.Domain;
+
+namespace TennisSimulator.PointAwarders
 {
     public interface IPointAwarder
     {

@@ -1,6 +1,7 @@
 ﻿using System;
+using TennisSimulator.Domain;
 
-namespace TennisSimulator
+namespace TennisSimulator.Deciders
 {
     public class SetDecider : IDecider
     {

@@ -1,4 +1,8 @@
-﻿namespace TennisSimulator
+﻿using TennisSimulator.Deciders;
+using TennisSimulator.Domain;
+using TennisSimulator.PointAwarders;
+
+namespace TennisSimulator
 {
     public class GameSimulator
     {
