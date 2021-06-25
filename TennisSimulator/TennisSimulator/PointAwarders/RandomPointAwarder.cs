@@ -3,7 +3,7 @@ using TennisSimulator.Domain;
 
 namespace TennisSimulator.PointAwarders
 {
-    public class GamePointAwarder : IPointAwarder
+    public class RandomPointAwarder : IPointAwarder
     {
         public void AwardPoint(ScoreResult scoreResult)
         {

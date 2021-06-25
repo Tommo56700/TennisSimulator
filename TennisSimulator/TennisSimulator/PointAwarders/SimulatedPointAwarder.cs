@@ -2,18 +2,18 @@
 
 namespace TennisSimulator.PointAwarders
 {
-    public class MatchPointAwarder : IPointAwarder
+    public class SimulatedPointAwarder : IPointAwarder
     {
-        private readonly ISimulator _setSimulator;
+        private readonly ISimulator _simulator;
 
-        public MatchPointAwarder(ISimulator setSimulator)
+        public SimulatedPointAwarder(ISimulator simulator)
         {
-            _setSimulator = setSimulator;
+            _simulator = simulator;
         }
 
         public void AwardPoint(ScoreResult setScore)
         {
-            if (_setSimulator.Simulate().Player1Win == true)
+            if (_simulator.Simulate().Player1Win == true)
                 setScore.Player1Score++;
             else
                 setScore.Player2Score++;

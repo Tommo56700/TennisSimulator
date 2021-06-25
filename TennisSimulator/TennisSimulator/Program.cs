@@ -8,13 +8,12 @@ namespace TennisSimulator
     {
         static void Main(string[] args)
         {
-            var gameSimulator = new Simulator(new GamePointAwarder(), new GameDecider());
-            var setSimulator = new Simulator(new SetPointAwarder(gameSimulator), new SetDecider());
-            var matchSimulator = new Simulator(new MatchPointAwarder(setSimulator), new MatchDecider());
+            var gameSimulator = new Simulator(new RandomPointAwarder(), new GameDecider(), "Game");
+            var setSimulator = new Simulator(new SimulatedPointAwarder(gameSimulator), new SetDecider(), "Set");
+            var matchSimulator = new Simulator(new SimulatedPointAwarder(setSimulator), new MatchDecider(), "Match");
 
-            var matchResult = matchSimulator.Simulate();
+            matchSimulator.Simulate();
 
-            Console.WriteLine(matchResult.ToString());
             Console.ReadLine();
         }
     }

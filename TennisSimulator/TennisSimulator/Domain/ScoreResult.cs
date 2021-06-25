@@ -17,9 +17,9 @@
             if (!Player1Win.HasValue)
                 return $"Current Score: {Player1Score} - {Player2Score}";
 
-            return Player1Win.Value
-                ? $"Player 1 wins: {Player1Score} - {Player2Score}"
-                : $"Player 2 wins: {Player2Score} - {Player1Score}";
+            var winningPlayerStr = Player1Win.Value ? "Player 1" : "Player 2";
+
+            return $"{Player1Score} - {Player2Score}  |  {winningPlayerStr} wins";
         }
     }
 }
