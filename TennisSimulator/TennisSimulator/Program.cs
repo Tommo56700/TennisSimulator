@@ -12,7 +12,7 @@ namespace TennisSimulator
             var setSimulator = new SetSimulator(new SetPointAwarder(gameSimulator), new SetDecider());
             var matchSimulator = new MatchSimulator(new MatchPointAwarder(setSimulator), new MatchDecider());
 
-            var matchResult = matchSimulator.SimulateMatch();
+            var matchResult = matchSimulator.Simulate();
 
             Console.WriteLine(matchResult.ToString());
             Console.ReadLine();

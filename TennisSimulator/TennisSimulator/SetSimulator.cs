@@ -4,7 +4,7 @@ using TennisSimulator.PointAwarders;
 
 namespace TennisSimulator
 {
-    public class SetSimulator
+    public class SetSimulator : ISimulator
     {
         private readonly IPointAwarder _setPointAwarder;
         private readonly IDecider _setDecider;
@@ -15,7 +15,7 @@ namespace TennisSimulator
             _setDecider = setDecider;
         }
 
-        public ScoreResult SimulateSet()
+        public ScoreResult Simulate()
         {
             var setScore = new ScoreResult();
 
