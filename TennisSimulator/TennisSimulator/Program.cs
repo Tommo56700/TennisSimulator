@@ -8,9 +8,9 @@ namespace TennisSimulator
     {
         static void Main(string[] args)
         {
-            var gameSimulator = new GameSimulator(new GamePointAwarder(), new GameDecider());
-            var setSimulator = new SetSimulator(new SetPointAwarder(gameSimulator), new SetDecider());
-            var matchSimulator = new MatchSimulator(new MatchPointAwarder(setSimulator), new MatchDecider());
+            var gameSimulator = new Simulator(new GamePointAwarder(), new GameDecider());
+            var setSimulator = new Simulator(new SetPointAwarder(gameSimulator), new SetDecider());
+            var matchSimulator = new Simulator(new MatchPointAwarder(setSimulator), new MatchDecider());
 
             var matchResult = matchSimulator.Simulate();
 
