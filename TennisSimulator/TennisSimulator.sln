@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisSimulator", "TennisSimulator\TennisSimulator.csproj", "{465F2AB4-FB5A-4FFA-890E-A140B417180A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisSimulatorTest", "TennisSimulatorTest\TennisSimulatorTest.csproj", "{F3FADC39-49F2-4E6B-83A7-4D124DC59D28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{465F2AB4-FB5A-4FFA-890E-A140B417180A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{465F2AB4-FB5A-4FFA-890E-A140B417180A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{465F2AB4-FB5A-4FFA-890E-A140B417180A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3FADC39-49F2-4E6B-83A7-4D124DC59D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FADC39-49F2-4E6B-83A7-4D124DC59D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FADC39-49F2-4E6B-83A7-4D124DC59D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FADC39-49F2-4E6B-83A7-4D124DC59D28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
