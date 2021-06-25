@@ -1,4 +1,6 @@
-﻿namespace TennisSimulator
+﻿using System;
+
+namespace TennisSimulator
 {
     class Program
     {
@@ -10,43 +12,53 @@
         }
     }
 
-    public class SetSimulator
+    public class MatchSimulator
     {
-        private readonly GameSimulator _gameSimulator;
+        private readonly IPointAwarder _matchPointAwarder;
+        private readonly IDecider _matchDecider;
 
-        public SetScore SimulateSet()
+        public MatchSimulator(IPointAwarder matchPointAwarder, IDecider matchDecider)
         {
-            var setScore = new SetScore();
+            _matchPointAwarder = matchPointAwarder;
+            _matchDecider = matchDecider;
+        }
 
-            while (!IsSetOver(setScore))
+        public ScoreResult SimulateMatch()
+        {
+            var gameScore = new ScoreResult();
+
+            while (!_matchDecider.IsOver(gameScore))
             {
-                var gameResult = _gameSimulator.SimulateGame();
-                AwardPoint(setScore, gameResult);
+                _matchPointAwarder.AwardPoint(gameScore);
             }
 
-            return setScore;
-        }
+            gameScore.Player1Win = gameScore.Player1Score > gameScore.Player2Score;
 
-        private void AwardPoint(SetScore setScore, GameScore gameResult)
-        {
-            if (gameResult.Player1Score - gameResult.Player2Score > 1)
-                setScore.Player1Score++;
-            else if (gameResult.Player2Score - gameResult.Player1Score > 1)
-                setScore.Player2Score++;
+            return gameScore;
         }
-
-        private bool IsSetOver(SetScore setScore) => setScore.Player1Score >= 6 || setScore.Player2Score >= 6;
     }
 
-    public class SetScore
+    public class MatchPointAwarder : IPointAwarder
     {
-        public SetScore(int player1Score = 0, int player2Score = 0)
+        private readonly SetSimulator _setSimulator;
+
+        public MatchPointAwarder(SetSimulator setSimulator)
         {
-            Player1Score = player1Score;
-            Player2Score = player2Score;
+            _setSimulator = setSimulator;
         }
 
-        public int Player1Score { get; set; }
-        public int Player2Score { get; set; }
+        public void AwardPoint(ScoreResult setScore)
+        {
+            if (_setSimulator.SimulateSet().Player1Win)
+                setScore.Player1Score++;
+            else
+                setScore.Player2Score++;
+        }
+    }
+
+    public class MatchDecider : IDecider
+    {
+        public bool IsOver(ScoreResult matchScore) =>
+            matchScore.Player1Score == 2 || matchScore.Player2Score == 2;
     }
 }

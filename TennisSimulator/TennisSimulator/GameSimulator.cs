@@ -2,23 +2,25 @@
 {
     public class GameSimulator
     {
-        private readonly IGamePointAwarder _pointAwarder;
-        private readonly IGameDecider _gameDecider;
+        private readonly IPointAwarder _gamePointAwarder;
+        private readonly IDecider _gameDecider;
 
-        public GameSimulator(IGamePointAwarder pointAwarder, IGameDecider gameDecider)
+        public GameSimulator(IPointAwarder gamePointAwarder, IDecider gameDecider)
         {
-            _pointAwarder = pointAwarder;
+            _gamePointAwarder = gamePointAwarder;
             _gameDecider = gameDecider;
         }
 
-        public GameScore SimulateGame()
+        public ScoreResult SimulateGame()
         {
-            var gameScore = new GameScore();
+            var gameScore = new ScoreResult();
 
-            while (!_gameDecider.IsGameOver(gameScore))
+            while (!_gameDecider.IsOver(gameScore))
             {
-                _pointAwarder.AwardPoint(gameScore);
+                _gamePointAwarder.AwardPoint(gameScore);
             }
+
+            gameScore.Player1Win = gameScore.Player1Score > gameScore.Player2Score;
 
             return gameScore;
         }

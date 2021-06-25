@@ -2,16 +2,16 @@
 
 namespace TennisSimulator
 {
-    public class RandomGamePointAwarder : IGamePointAwarder
+    public class RandomGamePointAwarder : IPointAwarder
     {
-        public void AwardPoint(GameScore gameScore)
+        public void AwardPoint(ScoreResult scoreResult)
         {
             var random = new Random();
 
-            if (random.NextDouble() > 0.5)
-                gameScore.Player1Score++;
+            if (random.Next(0, 2) > 0)
+                scoreResult.Player1Score++;
             else
-                gameScore.Player2Score++;
+                scoreResult.Player2Score++;
         }
     }
 }

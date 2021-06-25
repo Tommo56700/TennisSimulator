@@ -1,12 +1,11 @@
-﻿namespace TennisSimulator
-{
-    public class GameDecider : IGameDecider
-    {
-        public bool IsGameOver(GameScore gameScore) =>
-            HasPlayerWonGame(gameScore.Player1Score, gameScore.Player2Score) ||
-            HasPlayerWonGame(gameScore.Player2Score, gameScore.Player1Score);
+﻿using System;
 
-        private bool HasPlayerWonGame(int playerScore, int opponentScore) =>
-            playerScore > 3 && playerScore - opponentScore > 1;
+namespace TennisSimulator
+{
+    public class GameDecider : IDecider
+    {
+        public bool IsOver(ScoreResult scoreResult) =>
+            (scoreResult.Player1Score >= 4 || scoreResult.Player2Score >= 4) &&
+            Math.Abs(scoreResult.Player1Score - scoreResult.Player2Score) >= 2;
     }
 }
