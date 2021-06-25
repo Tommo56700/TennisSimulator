@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=890cb53f_002D90cc_002D44ed_002D91c8_002Df6f21fbc7dc7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3FADC39-49F2-4E6B-83A7-4D124DC59D28::.NETCoreApp,Version=v3.1::TennisSimulatorTest.GameDeciderTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3FADC39-49F2-4E6B-83A7-4D124DC59D28::.NETCoreApp,Version=v3.1::TennisSimulatorTest.SetDeciderTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3FADC39-49F2-4E6B-83A7-4D124DC59D28::.NETCoreApp,Version=v3.1::TennisSimulatorTest.MatchDeciderTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=eb306d3b_002D6257_002D47a1_002D8aa1_002Dceade6889169/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F3FADC39-49F2-4E6B-83A7-4D124DC59D28::.NETCoreApp,Version=v3.1::TennisSimulatorTest.Tests.Test1&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
