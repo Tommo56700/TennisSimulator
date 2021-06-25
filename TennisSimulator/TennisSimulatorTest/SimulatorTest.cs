@@ -18,7 +18,7 @@ namespace TennisSimulatorTest
         {
             mockDecider.Setup(x => x.IsOver(It.IsAny<ScoreResult>())).Returns(true);
 
-            var sut = new Simulator(mockPointAwarder.Object, mockDecider.Object);
+            var sut = new Simulator(mockPointAwarder.Object, mockDecider.Object, "test");
 
             var result = sut.Simulate();
 
